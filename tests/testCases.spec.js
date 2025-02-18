@@ -7,9 +7,6 @@ dotenv.config(); // Load environment variables
 
 const APP_URL = process.env.DEMO_APP_URL;
 
-if (!APP_URL) {
-  throw new Error("Environment variable DEMO_APP_URL is missing.");
-}
 
 test.describe('Automated Test Cases for Web & Mobile Applications', () => {
 

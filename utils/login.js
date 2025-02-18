@@ -1,4 +1,4 @@
-export const login = async (page, username = process.env.DEMO_APP_USERNAME, password = process.env.DEMO_APP_PASSWORD) => {
+export const login = async (page, username = process.env.DEMO_APP_USERNAME, password = process.env.DEMO_APP_PASSWORD) => { 
   const APP_URL = process.env.DEMO_APP_URL;
 
   if (!APP_URL) {
@@ -6,7 +6,7 @@ export const login = async (page, username = process.env.DEMO_APP_USERNAME, pass
   }
 
   try {
-    console.log(`Navigating to ${APP_URL}...`);
+    console.log("Navigating to [REDACTED URL]...");
     await page.goto(APP_URL, { waitUntil: 'networkidle' });
 
     const usernameField = page.getByRole('textbox', { name: 'Username' });
@@ -17,7 +17,7 @@ export const login = async (page, username = process.env.DEMO_APP_USERNAME, pass
     await passwordField.waitFor();
     await signInButton.waitFor();
 
-    console.log(`Attempting login with: ${username} / ${password}`);
+    console.log("Attempting login with: [REDACTED CREDENTIALS]");
     await usernameField.fill(username);
     await passwordField.fill(password);
     await signInButton.click();
@@ -25,7 +25,7 @@ export const login = async (page, username = process.env.DEMO_APP_USERNAME, pass
     // Check for successful login
     const dashboardElement = page.getByText('Fix navigation bug');
     if (await dashboardElement.isVisible({ timeout: 5000 })) {
-      console.log(" Login successful");
+      console.log("Login successful");
       return true;
     }
 
@@ -37,7 +37,7 @@ export const login = async (page, username = process.env.DEMO_APP_USERNAME, pass
     }
 
   } catch (error) {
-    console.error('Login attempt failed:', error);
+    console.error("Login attempt failed:", error);
     throw error;
   }
 };

@@ -1,0 +1,23 @@
+{
+  "name": "playwright_automation_tests",
+  "version": "1.0.0",
+  "description": "A Playwright automation project for testing purposes.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf test-results/ playwright-report/",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "allure-playwright": "^3.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}

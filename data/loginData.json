@@ -1,0 +1,33 @@
+[
+    {
+      "testCase": "Valid Login",
+      "username": "ENV_USERNAME",
+      "password": "ENV_PASSWORD",
+      "expectedResult": "success"
+    },
+    {
+      "testCase": "Invalid Login - Wrong Username",
+      "username": "wrongUser",
+      "password": "password123",
+      "expectedResult": "failure"
+    },
+    {
+      "testCase": "Invalid Login - Wrong Password",
+      "username": "admin",
+      "password": "wrongPassword",
+      "expectedResult": "failure"
+    },
+    {
+      "testCase": "Invalid Login - Both Wrong",
+      "username": "wrongUser",
+      "password": "wrongPassword",
+      "expectedResult": "failure"
+    },
+    {
+      "testCase": "Invalid Login - Empty Fields",
+      "username": "",
+      "password": "",
+      "expectedResult": "failure"
+    }
+  ]
+  
